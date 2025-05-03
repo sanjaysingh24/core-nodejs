@@ -32,7 +32,22 @@ const fs = require('fs');
 //     console.log("JSON File Written")
 // })
 
-fs.appendFile("new.txt","\nNew Line added by sanjay ",(err)=>{
+// fs.appendFile("new.txt","\nNew Line added by sanjay ",(err)=>{
+//     if(err) throw err;
+//     console.log("Content update successfully")
+// })
+
+// // to delete file
+// fs.unlink("file.txt",(err)=>{
+//     if(err) throw err
+//     console.log("File deleted Successfully")
+// })
+// fs.writeFile("new.txt","new file created",(err,data)=>{
+//     if(err) throw err;
+//     console.log("file created successfully")
+// })
+
+fs.rename("new.txt","newfile.txt",(err)=>{
     if(err) throw err;
-    console.log("Content update successfully")
+    console.log("file renamed successfully");
 })
