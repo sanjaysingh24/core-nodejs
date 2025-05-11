@@ -1,18 +1,18 @@
 let p1 = new Promise((resolve,reject)=>{
-    let success  = true;
-   setTimeout(()=>{
+    let success  = false;
+   
      if(success){
         resolve("Promise 1 resolved");
     }
     else{
         reject("Promise 1 rejected");
     }
-   },1000)
+   
 })
 
 let p2 = new Promise((resolve,reject)=>{
     let success = false;
-    setTimeout(()=>{
+    
            if(success){
         resolve("Promise 2 resolved");
     }
@@ -20,20 +20,20 @@ let p2 = new Promise((resolve,reject)=>{
         reject("Promise 2 rejected");
         
     }
-    },200)
+
 })
 
 
 let p3 = new Promise((resolve,reject)=>{
     let success = true;
-    setTimeout(()=>{
+    
         if(success){
         resolve("Promise 3 resolved");
     }
     else{
         reject("Promise 3 rejected");
     }
-    },1000)
+    
 })
 
 // if all promises are  success then it will return all promise otherwise one of the promises is false then it will return  the false one
@@ -43,4 +43,5 @@ let p3 = new Promise((resolve,reject)=>{
 
 //promise.race
 //Promise.race([p1,p2,p3]).then((result)=>console.log(result)).catch((err)=>console.log(err))
-Promise.allSettled([p1,p2,p3]).then((result)=>console.log(result)).catch((err)=>console.log(err))
+//Promise.allSettled([p1,p2,p3]).then((result)=>console.log(result)).catch((err)=>console.log(err))
+Promise.any([p1,p2,p3]).then((result)=>console.log(result)).catch((err)=>console.log(err))
